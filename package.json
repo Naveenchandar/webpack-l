@@ -4,8 +4,8 @@
   "description": "Learn Webpack",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
-    "build": "webpack"
+    "start": "webpack --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js"
   },
   "repository": {
     "type": "git",
