@@ -1,8 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { merge } = require('webpack-merge');
-const CommonWebpackConfig = require('./webpack.config');
 const MinifyCssPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CommonWebpackConfig = require('./webpack.config');
 
 module.exports = merge(CommonWebpackConfig, {
     output: {
@@ -13,7 +14,8 @@ module.exports = merge(CommonWebpackConfig, {
     plugins: [
         new MinifyCssPlugin({
             filename: "[name].[contenthash].bundle.css",
-        })
+        }),
+        new CleanWebpackPlugin() // to clean up previously generated files
     ],
     module: {
         rules: [
