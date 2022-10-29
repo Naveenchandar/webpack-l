@@ -1,5 +1,6 @@
 import { app } from './app';
 const root = document.getElementById('root');
+import './index.css';
 
 console.log('clicked');
 console.log('application name', app.name);

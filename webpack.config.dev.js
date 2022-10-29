@@ -12,8 +12,11 @@ module.exports = merge(CommonWebpackConfig, {
     module: {
         rules: [
             {
-                test: /\.html$\i/,
-                use: ['html-loader']
+                test: /\.css$/,
+                use: [
+                    "style-loader", // injects that into style tag
+                    "css-loader" // converts css to js
+                ]
             }
         ]
     }
